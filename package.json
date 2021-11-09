@@ -1,0 +1,61 @@
+{
+  "name": "@hatijs/helper",
+  "version": "0.0.1",
+  "description": "Node.js library, which has increased usability in @hatijs/core library.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hatijs/helper.git"
+  },
+  "keywords": [
+    "astrology",
+    "astronomy",
+    "ephemeris",
+    "horoscope",
+    "swiss",
+    "swissephe"
+  ],
+  "author": {
+    "name": "devkwan",
+    "eamil": "dev_bjun@meshyarn.io"
+  },
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hatijs/helper/issues",
+    "email": "hatijs@meshyarn.io"
+  },
+  "homepage": "https://github.com/hatijs/helper#readme",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only --no-notify ${1}",
+    "eslint": "eslint --ext .js,.ts . src",
+    "pretty": "prettier --write \"./**/*.{js,ts,jsx,json}\""
+  },
+  "dependencies": {
+    "@hatijs/core": "^0.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "prettier": "^2.4.1",
+    "ts-node-dev": "^1.1.8",
+    "tsc": "^2.0.3",
+    "typescript": "^4.4.4"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "lib"
+  ]
+}
