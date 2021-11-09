@@ -38,10 +38,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@hatijs/core@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@hatijs/core/-/core-0.2.3.tgz#11e8b8efaad5959c95240e3d231c792b6fc12063"
-  integrity sha512-OkJQGw1sXr7fkOA0CWz/t5pqJuOwJRMfVVIeUdqNWDspuYJrCH2BBE/8bUFcUwVR9dxWak2L8oyP9p+uSavC3w==
+"@hatijs/core@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@hatijs/core/-/core-0.2.6.tgz#3b5c5946ce140c0baa64f94cfc5d2e80989afdbf"
+  integrity sha512-TCeJkLj3V6d2smk1Ta7xu90Gjd02tizky5FlSugdhM86Of6uJzUYLlPkJKNc9tQtnM0RKxf+vXpcGblGt2Jx/A==
   dependencies:
     bindings "^1.5.0"
     node-addon-api "^4.2.0"
