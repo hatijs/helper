@@ -22,4 +22,7 @@ export const util = {
       }
     }
   }),
+  getDuodecatemorion: (degree: number) => {
+    return util.convertDegreeToPosition((degree % 30) * 12 + Math.floor(degree / 30) * 30);
+  },
 };
