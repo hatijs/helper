@@ -62,6 +62,11 @@ const Planet = {
   'PLUTO_PICKERING': core.SE_PLUTO_PICKERING,
 }
 
+const Lot = {
+  'FORTUNE': 100,
+  'SPIRIT': 101,
+}
+
 const Moiety = {
 	'SUN': 5,
   'MOON': 4.5,
@@ -231,4 +236,5 @@ export {
 	Triplicity,
   Planet,
   Constellation,
+  Lot,
 };

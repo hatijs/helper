@@ -37,7 +37,7 @@ class Hati {
     // 가공된 라이브러리 제공 export
     this.constant = constant;
 		this.house = house(this.tjdUT, this.geometry.longitude, this.geometry.latitude);
-    this.position = position(this.tjdUT);
+    this.position = position(this.tjdUT, this.geometry.longitude, this.geometry.latitude);
     this.util = util;
   }
 
