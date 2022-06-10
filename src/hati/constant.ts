@@ -3,8 +3,8 @@ import core from "@hatijs/core";
 enum Constellation {
   'Aries',
   'Taurus',
+	'Gemini',
   'Cancer',
-  'Gemini',
   'Leo',
   'Virgo',
   'Libra',
