@@ -1,10 +1,8 @@
 import core from '@hatijs/core';
 
-import { constant, house, util } from '.';
+import { constant, util } from '.';
 
 export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
-    const hse = house(tjdUT, geoLon, geoLat);
-
     const getPlanet = (name: keyof typeof constant.Planet) => {
         const planet = constant.Planet[name];
 
@@ -81,46 +79,89 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
         return result;
     };
 
+    const getLot = (name: keyof typeof constant.Lot) => {
+        const isDiurnal = util.isDiurnal(tjdUT, geoLon, geoLat);
+        const asc = util.getPosition(tjdUT, geoLon, geoLat, 'WHOLE_SIGN');
+
+        const acquisition = () => {
+            return fortune() + 10 * 30;
+        };
+
+        const basis = () => {
+            const lotOfFortune = fortune();
+            const lotOfSpirit = fortune(true);
+
+            const love =
+                asc.ascendant +
+                (isDiurnal
+                    ? lotOfSpirit - lotOfFortune
+                    : lotOfFortune - lotOfSpirit);
+            const necessity =
+                asc.ascendant +
+                (isDiurnal
+                    ? lotOfFortune - lotOfSpirit
+                    : lotOfSpirit - lotOfFortune);
+
+            return util.isDiurnal(tjdUT, geoLon, geoLat, love)
+                ? necessity
+                : love;
+        };
+
+        const exaltation = () => {
+            const sun = getPlanet('SUN');
+            const moon = getPlanet('MOON');
+
+            return (
+                asc.ascendant +
+                (isDiurnal
+                    ? 19 - sun.position.longitude.absolute
+                    : 33 - moon.position.longitude.absolute)
+            );
+        };
+
+        const fortune = (inversion: boolean = false) => {
+            const sun = getPlanet('SUN');
+            const moon = getPlanet('MOON');
+
+            return (
+                asc.ascendant +
+                ((isDiurnal && !inversion) || (!isDiurnal && inversion)
+                    ? moon.position.longitude.absolute -
+                      sun.position.longitude.absolute
+                    : sun.position.longitude.absolute -
+                      moon.position.longitude.absolute)
+            );
+        };
+
+        let result;
+        switch (name) {
+            case 'ACQUISITION': {
+                result = acquisition();
+                break;
+            }
+            case 'BASIS': {
+                result = basis();
+                break;
+            }
+            case 'EXALTATION': {
+                result = exaltation();
+                break;
+            }
+            case 'FORTUNE': {
+                result = fortune();
+                break;
+            }
+            case 'SPIRIT': {
+                result = fortune(true);
+                break;
+            }
+        }
+
+        return util.convertDegreeToPosition(result);
+    };
+
     return {
         getPlanet,
-        getLot: (name: keyof typeof constant.Lot) => {
-            let result;
-            switch (name) {
-                case 'FORTUNE': {
-                    const isDiurnal = hse.isDiurnal();
-
-                    const asc = hse.getPosition('WHOLE_SIGN');
-                    const sun = getPlanet('SUN');
-                    const moon = getPlanet('MOON');
-
-                    result =
-                        asc.ascendant +
-                        (isDiurnal
-                            ? moon.position.longitude.absolute -
-                              sun.position.longitude.absolute
-                            : sun.position.longitude.absolute -
-                              moon.position.longitude.absolute);
-                    break;
-                }
-                case 'SPIRIT': {
-                    const isDiurnal = hse.isDiurnal();
-
-                    const asc = hse.getPosition('WHOLE_SIGN');
-                    const sun = getPlanet('SUN');
-                    const moon = getPlanet('MOON');
-
-                    result =
-                        asc.ascendant +
-                        (isDiurnal
-                            ? sun.position.longitude.absolute -
-                              moon.position.longitude.absolute
-                            : moon.position.longitude.absolute -
-                              sun.position.longitude.absolute);
-                    break;
-                }
-            }
-
-            return util.convertDegreeToPosition(result);
-        },
+        getLot,
     };
 };
