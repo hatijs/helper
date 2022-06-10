@@ -1,28 +1,36 @@
-import core from "@hatijs/core";
+import core from '@hatijs/core';
 
-import { constant } from ".";
+import { constant } from '.';
 
 export const util = {
-  getVersion: () => core.node_swe_version(),
-  getConstellationIndexFromLongitude: (longitude: number) => Math.floor(longitude / 30),
-  getConstellationIndexFromConstellationName: (constellationName: string) => Object.values(constant.Constellation).indexOf(constellationName),
-  convertDegreeToDMS: (degree: number) => ({
-    degree: Math.floor(degree % 30),
-    minute: Math.floor((degree * 60) % 60),
-    second: Math.floor((degree * 60 * 60) % 60)
-  }),
-  convertDegreeToPosition: (degree: number) => ({
-    constellation: {
-      name: constant.Constellation[util.getConstellationIndexFromLongitude(degree)]
+    getVersion: () => core.node_swe_version(),
+    getConstellationIndexFromLongitude: (longitude: number) =>
+        Math.floor(longitude / 30),
+    getConstellationIndexFromConstellationName: (constellationName: string) =>
+        Object.values(constant.Constellation).indexOf(constellationName),
+    convertDegreeToDMS: (degree: number) => ({
+        degree: Math.floor(degree % 30),
+        minute: Math.floor((degree * 60) % 60),
+        second: Math.floor((degree * 60 * 60) % 60),
+    }),
+    convertDegreeToPosition: (degree: number) => ({
+        constellation: {
+            name: constant.Constellation[
+                util.getConstellationIndexFromLongitude(degree)
+            ],
+        },
+        position: {
+            longitude: {
+                absolute: degree,
+                relative:
+                    degree -
+                    util.getConstellationIndexFromLongitude(degree) * 30,
+            },
+        },
+    }),
+    getDuodecatemorion: (degree: number) => {
+        return util.convertDegreeToPosition(
+            (degree % 30) * 12 + Math.floor(degree / 30) * 30
+        );
     },
-    position: {
-      longitude: {
-        absolute: degree,
-        relative: degree - util.getConstellationIndexFromLongitude(degree) * 30,
-      }
-    }
-  }),
-  getDuodecatemorion: (degree: number) => {
-    return util.convertDegreeToPosition((degree % 30) * 12 + Math.floor(degree / 30) * 30);
-  },
 };
