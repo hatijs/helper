@@ -2,7 +2,7 @@ import { join } from "path";
 
 import swisseph from "@hatijs/core";
 
-import { constant, dignity, house, position, util } from "./hati";
+import { constant, house, position, util } from "./hati";
 
 class Hati {
   private static instance: Hati;
@@ -13,7 +13,6 @@ class Hati {
 	};
 
   public constant;
-  public dignity;
 	public house;
   public position;
   public util;
@@ -37,7 +36,6 @@ class Hati {
 
     // 가공된 라이브러리 제공 export
     this.constant = constant;
-    this.dignity = dignity(this.tjdUT, this.geometry.longitude, this.geometry.latitude);
 		this.house = house(this.tjdUT, this.geometry.longitude, this.geometry.latitude);
     this.position = position(this.tjdUT, this.geometry.longitude, this.geometry.latitude);
     this.util = util;
