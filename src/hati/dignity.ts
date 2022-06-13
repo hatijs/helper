@@ -24,38 +24,34 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
             const range = dignity[name];
             if (Array.isArray(range)) return checkRange(range);
 
-            const result: { [key: string]: any } = {};
             switch (rule) {
                 case 'TRIPLICITY': {
-                    Object.keys(range).map((key) => {
+                    return Object.keys(range).map((key) => {
                         const [first, second, partner] = (<number[][][]>(
                             range[<keyof typeof range>key][isDiurnal ? 0 : 1]
                         )).map((value) => checkRange(value));
+
+                        const result: { [key: string]: any } = {};
 
                         result[util.convertUpperCaseToCapitalize(key)] = {
                             First: first,
                             Second: second,
                             Partner: partner,
                         };
-                    });
 
-                    return Object.keys(result).length === 0 ? false : result;
+                        return result;
+                    }).reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
-                case 'TERM': {
-                    Object.keys(range).map((key) => {
-                        result[util.convertUpperCaseToCapitalize(key)] =
-                            checkRange(range[<keyof typeof range>key]);
-                    });
-
-                    return result;
-                }
+                case 'TERM':
                 case 'DECAN': {
-                    Object.keys(range).map((key) => {
+                    return Object.keys(range).map((key) => {
+                        const result: { [key: string]: any } = {};
+
                         result[util.convertUpperCaseToCapitalize(key)] =
                             checkRange(range[<keyof typeof range>key]);
-                    });
 
-                    return result;
+                        return result;
+                    }).reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
             }
         };
