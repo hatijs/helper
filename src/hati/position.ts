@@ -2,7 +2,33 @@ import core from '@hatijs/core';
 
 import { constant, util } from '.';
 
+type Mapped<
+    N extends number,
+    Result extends Array<unknown> = []
+> = Result['length'] extends N
+    ? Result
+    : Mapped<N, [...Result, Result['length']]>;
+
 export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
+    const getHouse = (hsys: keyof typeof constant.House) => {
+        const houses = util.getPosition(tjdUT, geoLon, geoLat, hsys);
+
+        return (house: Exclude<Uppercase<keyof typeof houses>, 'HOUSE'>) => {
+            return util.convertDegreeToPosition(
+                houses[
+                    <Exclude<keyof typeof houses, 'house'>>house.toLowerCase()
+                ]
+            );
+        };
+    };
+
+    const getHouses = (hsys: keyof typeof constant.House) => {
+        const houses = util.getPosition(tjdUT, geoLon, geoLat, hsys).house;
+        return (number: Mapped<12>[number]) => {
+            return util.convertDegreeToPosition(houses[number]);
+        };
+    };
+
     const getPlanet = (name: keyof typeof constant.Planet) => {
         const planet = constant.Planet[name];
 
@@ -161,6 +187,8 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
     };
 
     return {
+        getHouse,
+        getHouses,
         getPlanet,
         getLot,
     };

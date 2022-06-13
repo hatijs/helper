@@ -26,32 +26,38 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
 
             switch (rule) {
                 case 'TRIPLICITY': {
-                    return Object.keys(range).map((key) => {
-                        const [first, second, partner] = (<number[][][]>(
-                            range[<keyof typeof range>key][isDiurnal ? 0 : 1]
-                        )).map((value) => checkRange(value));
+                    return Object.keys(range)
+                        .map((key) => {
+                            const [first, second, partner] = (<number[][][]>(
+                                range[<keyof typeof range>key][
+                                    isDiurnal ? 0 : 1
+                                ]
+                            )).map((value) => checkRange(value));
 
-                        const result: { [key: string]: any } = {};
+                            const result: { [key: string]: any } = {};
 
-                        result[util.convertUpperCaseToCapitalize(key)] = {
-                            First: first,
-                            Second: second,
-                            Partner: partner,
-                        };
+                            result[util.convertUpperCaseToCapitalize(key)] = {
+                                First: first,
+                                Second: second,
+                                Partner: partner,
+                            };
 
-                        return result;
-                    }).reduce((prev, cur) => ({ ...prev, ...cur }));
+                            return result;
+                        })
+                        .reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
                 case 'TERM':
                 case 'DECAN': {
-                    return Object.keys(range).map((key) => {
-                        const result: { [key: string]: any } = {};
+                    return Object.keys(range)
+                        .map((key) => {
+                            const result: { [key: string]: any } = {};
 
-                        result[util.convertUpperCaseToCapitalize(key)] =
-                            checkRange(range[<keyof typeof range>key]);
+                            result[util.convertUpperCaseToCapitalize(key)] =
+                                checkRange(range[<keyof typeof range>key]);
 
-                        return result;
-                    }).reduce((prev, cur) => ({ ...prev, ...cur }));
+                            return result;
+                        })
+                        .reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
             }
         };
