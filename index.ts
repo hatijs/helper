@@ -1,1 +1,2 @@
-export * from './src';
+import hati from './src';
+export default hati;
