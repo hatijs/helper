@@ -12,7 +12,7 @@ describe('Testing House', () => {
                 const { absolute, ruleOfMoiety } = hati.house.getPlanet(
                     'SUN',
                     <keyof typeof hati.constant.House>house
-                ).house;
+                );
                 return [absolute, ruleOfMoiety];
             });
 
@@ -37,7 +37,7 @@ describe('Testing House', () => {
                 const { absolute, ruleOfMoiety } = hati.house.getPlanet(
                     'MOON',
                     <keyof typeof hati.constant.House>house
-                ).house;
+                );
                 return [absolute, ruleOfMoiety];
             });
 
@@ -60,26 +60,26 @@ describe('Testing House', () => {
     describe('getLot', () => {
         test('FORTUNE', () => {
             const result = Object.keys(hati.constant.House).map((house) => {
-                const { absolute, ruleOfMoiety } = hati.house.getLot(
+                const { absolute } = hati.house.getLot(
                     'FORTUNE',
                     <keyof typeof hati.constant.House>house
-                ).house;
-                return [absolute, ruleOfMoiety];
+                );
+                return [absolute];
             });
 
             expect(result).toStrictEqual([
-                [3, 3],
-                [3, 3],
-                [3, 3],
-                [3, 3],
-                [4, 4],
-                [4, 4],
-                [3, 3],
-                [3, 3],
-                [3, 3],
-                [3, 3],
-                [4, 4],
-                [3, 3],
+                [3],
+                [3],
+                [3],
+                [3],
+                [4],
+                [4],
+                [3],
+                [3],
+                [3],
+                [3],
+                [4],
+                [3],
             ]);
         });
     });
