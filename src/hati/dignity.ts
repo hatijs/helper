@@ -1,9 +1,15 @@
 import { constant, position, util } from '.';
 
 export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
-    const getPlanet = (rule: keyof typeof constant.Dignity) => {
+    /**
+     * Gets whether it is 'ownership' according to planet 'name'.
+     * @param ownership The type of ownership a planet can have
+     * @param name Name of planet you want to know ownership of
+     * @returns boolean
+     */
+    const getPlanet = (ownership: keyof typeof constant.Dignity) => {
         const isDiurnal = util.isDiurnal(tjdUT, geoLon, geoLat);
-        const dignity = constant[constant.Dignity[rule]];
+        const dignity = constant[constant.Dignity[ownership]];
 
         return (name: keyof typeof dignity) => {
             const posPlanet = position(tjdUT, geoLon, geoLat).getPlanet(name);
@@ -24,7 +30,7 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
             const range = dignity[name];
             if (Array.isArray(range)) return checkRange(range);
 
-            switch (rule) {
+            switch (ownership) {
                 case 'TRIPLICITY': {
                     return Object.keys(range)
                         .map((key) => {

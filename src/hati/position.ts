@@ -10,25 +10,42 @@ type Mapped<
     : Mapped<N, [...Result, Result['length']]>;
 
 export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
+    /**
+     * Gets the position of the house 'name' according to 'hsys'.
+     * @param hsys House system name
+     * @param name House 'Name' to know the position
+     * @returns Constellation name and Position of longitude (absolute, relative)
+     */
     const getHouse = (hsys: keyof typeof constant.House) => {
-        const houses = util.getPosition(tjdUT, geoLon, geoLat, hsys);
+        const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys);
 
-        return (house: Exclude<Uppercase<keyof typeof houses>, 'HOUSE'>) => {
+        return (name: Exclude<Uppercase<keyof typeof houses>, 'HOUSE'>) => {
             return util.convertDegreeToPosition(
                 houses[
-                    <Exclude<keyof typeof houses, 'house'>>house.toLowerCase()
+                    <Exclude<keyof typeof houses, 'house'>>name.toLowerCase()
                 ]
             );
         };
     };
 
+    /**
+     * Gets the position of the house 'number' according to 'hsys'.
+     * @param hsys House system name
+     * @param number House 'number' to know the position
+     * @returns Constellation name and Position of longitude (absolute, relative)
+     */
     const getHouses = (hsys: keyof typeof constant.House) => {
-        const houses = util.getPosition(tjdUT, geoLon, geoLat, hsys).house;
+        const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys).house;
         return (number: Mapped<12>[number]) => {
             return util.convertDegreeToPosition(houses[number]);
         };
     };
 
+    /**
+     * Gets the position according to the planet 'name'.
+     * @param name Name of planet you want to know position of
+     * @returns Constellation name and Position of longitude, latitude, rectAscension, declination, Speed of longitude, latitude
+     */
     const getPlanet = (name: keyof typeof constant.Planet) => {
         const planet = constant.Planet[name];
 
@@ -105,9 +122,14 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
         return result;
     };
 
+    /**
+     * Gets the position according to the lot 'name'.
+     * @param name Name of lot you want to know position of
+     * @returns Constellation name and Position of longitude
+     */
     const getLot = (name: keyof typeof constant.Lot) => {
         const isDiurnal = util.isDiurnal(tjdUT, geoLon, geoLat);
-        const asc = util.getPosition(tjdUT, geoLon, geoLat, 'WHOLE_SIGN');
+        const asc = util.getHouses(tjdUT, geoLon, geoLat, 'WHOLE_SIGN');
 
         const acquisition = () => {
             return fortune() + 10 * 30;

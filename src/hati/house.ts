@@ -1,11 +1,17 @@
 import { constant, position, util } from '.';
 
 export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
+    /**
+     * Gets the 'house' information according to planet 'name'.
+     * @param name Name of planet you want to know house of
+     * @param hsys House system name
+     * @returns 'absolute' - absolute coordinates, 'ruleOfMoiety' - coordinates with planet Moiety applied
+     */
     const getPlanet = (
         name: keyof typeof constant.Planet,
         hsys: keyof typeof constant.House
     ) => {
-        const posHouse = util.getPosition(tjdUT, geoLon, geoLat, hsys);
+        const posHouse = util.getHouses(tjdUT, geoLon, geoLat, hsys);
         const posPlanet = position(tjdUT, geoLon, geoLat).getPlanet(name);
 
         const calculate = (
@@ -43,29 +49,31 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
         };
 
         return {
-            house: {
-                absolute: calculate(posHouse.house, {
-                    longitude: posPlanet.position.longitude.absolute,
-                    moiety: 0,
-                }),
-                ruleOfMoiety: calculate(posHouse.house, {
-                    longitude: posPlanet.position.longitude.absolute,
-                    moiety:
-                        name in constant.Moiety
-                            ? constant.Moiety[
-                                  <keyof typeof constant.Moiety>name
-                              ]
-                            : 0,
-                }),
-            },
+            absolute: calculate(posHouse.house, {
+                longitude: posPlanet.position.longitude.absolute,
+                moiety: 0,
+            }),
+            ruleOfMoiety: calculate(posHouse.house, {
+                longitude: posPlanet.position.longitude.absolute,
+                moiety:
+                    name in constant.Moiety
+                        ? constant.Moiety[<keyof typeof constant.Moiety>name]
+                        : 0,
+            }),
         };
     };
 
+    /**
+     * Gets the 'house' information according to lot 'name'.
+     * @param name Name of lot you want to know house of
+     * @param hsys House system name
+     * @returns 'absolute' - absolute coordinates
+     */
     const getLot = (
         name: keyof typeof constant.Lot,
         hsys: keyof typeof constant.House
     ) => {
-        const posHouse = util.getPosition(tjdUT, geoLon, geoLat, hsys);
+        const posHouse = util.getHouses(tjdUT, geoLon, geoLat, hsys);
         const posLot = position(tjdUT, geoLon, geoLat).getLot(name);
 
         const calculate = (
@@ -103,16 +111,10 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
         };
 
         return {
-            house: {
-                absolute: calculate(posHouse.house, {
-                    longitude: posLot.position.longitude.absolute,
-                    moiety: 0,
-                }),
-                ruleOfMoiety: calculate(posHouse.house, {
-                    longitude: posLot.position.longitude.absolute,
-                    moiety: 0,
-                }),
-            },
+            absolute: calculate(posHouse.house, {
+                longitude: posLot.position.longitude.absolute,
+                moiety: 0,
+            }),
         };
     };
 
