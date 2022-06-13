@@ -1,6 +1,6 @@
 {
     "name": "@hatijs/helper",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Node.js library, which has increased usability in @hatijs/core library.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
