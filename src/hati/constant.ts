@@ -1,5 +1,15 @@
 import core from '@hatijs/core';
 
+const ChaldeanOrder = {
+    SATURN: <'SATURN'>'SATURN',
+    JUPITER: <'JUPITER'>'JUPITER',
+    MARS: <'MARS'>'MARS',
+    SUN: <'SUN'>'SUN',
+    VENUS: <'VENUS'>'VENUS',
+    MERCURY: <'MERCURY'>'MERCURY',
+    MOON: <'MOON'>'MOON',
+}
+
 enum Constellation {
     'Aries',
     'Taurus',
@@ -1228,6 +1238,7 @@ const IFlag = {
 };
 
 export {
+    ChaldeanOrder,
     Decan,
     Detriment,
     Dignity,
