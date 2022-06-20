@@ -12,11 +12,11 @@ class Hati {
         latitude: number;
     };
 
-    public constant;
+    public static constant: typeof constant;
     public dignity;
     public house;
     public position;
-    public util;
+    public static util: typeof util;
 
     public swisseph;
 
@@ -41,7 +41,7 @@ class Hati {
         this.swisseph = swisseph;
 
         // 가공된 라이브러리 제공 export
-        this.constant = constant;
+        Hati.constant = constant;
         this.dignity = dignity(
             this.tjdUT,
             this.geometry.longitude,
@@ -57,7 +57,7 @@ class Hati {
             this.geometry.longitude,
             this.geometry.latitude
         );
-        this.util = util;
+        Hati.util = util;
     }
 
     public static getInstance(
