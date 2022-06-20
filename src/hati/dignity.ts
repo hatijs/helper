@@ -40,29 +40,23 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
                                 ]
                             )).map((value) => checkRange(value));
 
-                            const result: { [key: string]: any } = {};
-
-                            result[util.convertUpperCaseToCapitalize(key)] = {
-                                First: first,
-                                Second: second,
-                                Partner: partner,
+                            return {
+                                [util.convertUpperCaseToCapitalize(key)]: {
+                                    First: first,
+                                    Second: second,
+                                    Partner: partner,
+                                },
                             };
-
-                            return result;
                         })
                         .reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
                 case 'TERM':
                 case 'DECAN': {
                     return Object.keys(range)
-                        .map((key) => {
-                            const result: { [key: string]: any } = {};
-
-                            result[util.convertUpperCaseToCapitalize(key)] =
-                                checkRange(range[<keyof typeof range>key]);
-
-                            return result;
-                        })
+                        .map((key) => ({
+                            [util.convertUpperCaseToCapitalize(key)]:
+                                checkRange(range[<keyof typeof range>key]),
+                        }))
                         .reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
             }
