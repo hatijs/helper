@@ -9,7 +9,7 @@ describe('Testing Position', () => {
     describe('getHouse', () => {
         test('PORPHYRY', () => {
             const houses = hati.position.getHouse('PORPHYRY');
-            const keys = hati.util.createEnumObject<
+            const keys = Hati.util.createEnumObject<
                 Parameters<typeof houses>[0]
             >({
                 ARMC: 'ARMC',
