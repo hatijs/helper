@@ -1,5 +1,14 @@
 import core from '@hatijs/core';
 
+const AVERAGE_SPEED = {
+    SATURN: (0 * 60 * 60 + 2 * 60 + 1) / (60 * 60),
+    JUPITER: (0 * 60 * 60 + 4 * 60 + 59) / (60 * 60),
+    MARS: (0 * 60 * 60 + 31 * 60 + 27) / (60 * 60),
+    SUN: (0 * 60 * 60 + 59 * 60 + 8) / (60 * 60),
+    VENUS: (1 * 60 * 60 + 12 * 60 + 0) / (60 * 60),
+    MERCURY: (1 * 60 * 60 + 23 * 60 + 0) / (60 * 60),
+    MOON: (13 * 60 * 60 + 10 * 60 + 35) / (60 * 60),
+};
 
 const CHALDEAN_ORDER = {
     SATURN: <'SATURN'>'SATURN',
@@ -1239,6 +1248,7 @@ const I_FLAG = {
 };
 
 export {
+    AVERAGE_SPEED,
     CHALDEAN_ORDER,
     DECAN,
     DETRIMENT,
