@@ -8,7 +8,7 @@ const ChaldeanOrder = {
     VENUS: <'VENUS'>'VENUS',
     MERCURY: <'MERCURY'>'MERCURY',
     MOON: <'MOON'>'MOON',
-}
+};
 
 enum Constellation {
     'Aries',
