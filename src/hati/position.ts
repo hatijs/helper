@@ -16,7 +16,7 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param name House 'Name' to know the position
      * @returns Constellation name and Position of longitude (absolute, relative)
      */
-    const getHouse = (hsys: keyof typeof constant.House) => {
+    const getHouse = (hsys: keyof typeof constant.HOUSE) => {
         const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys);
 
         return (name: Exclude<Uppercase<keyof typeof houses>, 'HOUSE'>) => {
@@ -34,7 +34,7 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param number House 'number' to know the position
      * @returns Constellation name and Position of longitude (absolute, relative)
      */
-    const getHouses = (hsys: keyof typeof constant.House) => {
+    const getHouses = (hsys: keyof typeof constant.HOUSE) => {
         const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys).house;
         return (number: Mapped<12>[number]) => {
             return util.convertDegreeToPosition(houses[number]);
@@ -46,8 +46,8 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param name Name of planet you want to know position of
      * @returns Constellation name and Position of longitude, latitude, rectAscension, declination, Speed of longitude, latitude
      */
-    const getPlanet = (name: keyof typeof constant.Planet) => {
-        const planet = constant.Planet[name];
+    const getPlanet = (name: keyof typeof constant.PLANET) => {
+        const planet = constant.PLANET[name];
 
         const resultSpeed = core.node_swe_calc_ut(
             tjdUT,
@@ -66,8 +66,8 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
             throw new Error(resultEquatorial.error);
 
         const result = {
-            name: Object.keys(constant.Planet)[
-                Object.values(constant.Planet)
+            name: Object.keys(constant.PLANET)[
+                Object.values(constant.PLANET)
                     .map((v, i) => (v === planet ? i : undefined))
                     .filter((v) => v)[0] ?? 0
             ],
@@ -91,7 +91,7 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
 
         if ('longitude' in resultSpeed && 'declination' in resultEquatorial) {
             result.constellation = {
-                name: constant.Constellation[
+                name: constant.CONSTELLATION[
                     util.getConstellationIndexFromLongitude(
                         resultSpeed.longitude
                     )
@@ -127,7 +127,7 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param name Name of lot you want to know position of
      * @returns Constellation name and Position of longitude
      */
-    const getLot = (name: keyof typeof constant.Lot) => {
+    const getLot = (name: keyof typeof constant.LOT) => {
         const isDiurnal = util.isDiurnal(tjdUT, geoLon, geoLat);
         const asc = util.getHouses(tjdUT, geoLon, geoLat, 'WHOLE_SIGN');
 

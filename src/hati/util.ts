@@ -20,7 +20,7 @@ export const util = {
      */
     convertDegreeToPosition: (degree: number) => ({
         constellation: {
-            name: constant.Constellation[
+            name: constant.CONSTELLATION[
                 util.getConstellationIndexFromLongitude(degree)
             ],
         },
@@ -60,8 +60,9 @@ export const util = {
      * @param name Constellation name
      * @returns Constellation Index according to the order of Aries-Pieces constellation
      */
-    getConstellationIndexFromConstellationName: (name: string) =>
-        Object.values(constant.Constellation).indexOf(name),
+    getConstellationIndexFromConstellationName: (
+        name: keyof typeof constant.CONSTELLATION
+    ) => Object.values(constant.CONSTELLATION).indexOf(name),
     /**
      * Gets the position of the duodecatemorion according to the given degree.
      * @param degree The radian degree you want to calculate
@@ -84,7 +85,7 @@ export const util = {
         tjdUT: number,
         geoLon: number,
         geoLat: number,
-        hsys: keyof typeof constant.House
+        hsys: keyof typeof constant.HOUSE
     ) => {
         const result = core.node_swe_houses(tjdUT, geoLat, geoLon, hsys);
 

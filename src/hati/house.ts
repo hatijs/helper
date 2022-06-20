@@ -8,8 +8,8 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @returns 'absolute' - absolute coordinates, 'ruleOfMoiety' - coordinates with planet Moiety applied
      */
     const getPlanet = (
-        name: keyof typeof constant.Planet,
-        hsys: keyof typeof constant.House
+        name: keyof typeof constant.PLANET,
+        hsys: keyof typeof constant.HOUSE
     ) => {
         const posHouse = util.getHouses(tjdUT, geoLon, geoLat, hsys);
         const posPlanet = position(tjdUT, geoLon, geoLat).getPlanet(name);
@@ -56,8 +56,8 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
             ruleOfMoiety: calculate(posHouse.house, {
                 longitude: posPlanet.position.longitude.absolute,
                 moiety:
-                    name in constant.Moiety
-                        ? constant.Moiety[<keyof typeof constant.Moiety>name]
+                    name in constant.MOIETY
+                        ? constant.MOIETY[<keyof typeof constant.MOIETY>name]
                         : 0,
             }),
         };
@@ -70,8 +70,8 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @returns 'absolute' - absolute coordinates
      */
     const getLot = (
-        name: keyof typeof constant.Lot,
-        hsys: keyof typeof constant.House
+        name: keyof typeof constant.LOT,
+        hsys: keyof typeof constant.HOUSE
     ) => {
         const posHouse = util.getHouses(tjdUT, geoLon, geoLat, hsys);
         const posLot = position(tjdUT, geoLon, geoLat).getLot(name);

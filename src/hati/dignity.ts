@@ -7,9 +7,9 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param name Name of planet you want to know ownership of
      * @returns boolean
      */
-    const getPlanet = (ownership: keyof typeof constant.Dignity) => {
+    const getPlanet = (ownership: keyof typeof constant.DIGNITY) => {
         const isDiurnal = util.isDiurnal(tjdUT, geoLon, geoLat);
-        const dignity = constant[constant.Dignity[ownership]];
+        const dignity = constant[constant.DIGNITY[ownership]];
 
         return (name: keyof typeof dignity) => {
             const posPlanet = position(tjdUT, geoLon, geoLat).getPlanet(name);

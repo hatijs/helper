@@ -34,14 +34,14 @@ describe('Testing Position', () => {
             });
 
             expect(result).toStrictEqual([
-                [{ name: 'Virgo' }, 156.3720625401026, 6.372062540102604],
-                [{ name: 'Scorpio' }, 233.83191934884618, 23.831919348846185],
+                [{ name: 'VIRGO' }, 156.3720625401026, 6.372062540102604],
+                [{ name: 'SCORPIO' }, 233.83191934884618, 23.831919348846185],
                 [{ name: undefined }, undefined, NaN],
                 [{ name: undefined }, undefined, NaN],
-                [{ name: 'Virgo' }, 154.5076660745534, 4.507666074553413],
+                [{ name: 'VIRGO' }, 154.5076660745534, 4.507666074553413],
                 [{ name: undefined }, undefined, NaN],
                 [{ name: undefined }, undefined, NaN],
-                [{ name: 'Cancer' }, 99.66993930918929, 9.669939309189289],
+                [{ name: 'CANCER' }, 99.66993930918929, 9.669939309189289],
             ]);
         });
     });
@@ -66,22 +66,22 @@ describe('Testing Position', () => {
             });
 
             expect(result).toStrictEqual([
-                [{ name: 'Scorpio' }, 233.83191934884618, 23.831919348846185],
+                [{ name: 'SCORPIO' }, 233.83191934884618, 23.831919348846185],
                 [
-                    { name: 'Sagittarius' },
+                    { name: 'SAGITTARIUS' },
                     264.16200636362436,
                     24.162006363624357,
                 ],
-                [{ name: 'Capricorn' }, 298.7745623688436, 28.77456236884359],
-                [{ name: 'Pisce' }, 334.5076660745534, 4.507666074553413],
-                [{ name: 'Aries' }, 6.255373824062872, 6.255373824062872],
-                [{ name: 'Taurus' }, 32.230215324437495, 2.230215324437495],
-                [{ name: 'Taurus' }, 53.83191934884621, 23.831919348846213],
-                [{ name: 'Gemini' }, 84.16200636362436, 24.162006363624357],
-                [{ name: 'Cancer' }, 118.77456236884359, 28.77456236884359],
-                [{ name: 'Virgo' }, 154.5076660745534, 4.507666074553413],
-                [{ name: 'Libra' }, 186.2553738240629, 6.2553738240629],
-                [{ name: 'Scorpio' }, 212.2302153244375, 2.230215324437495],
+                [{ name: 'CAPRICORN' }, 298.7745623688436, 28.77456236884359],
+                [{ name: 'PISCE' }, 334.5076660745534, 4.507666074553413],
+                [{ name: 'ARIES' }, 6.255373824062872, 6.255373824062872],
+                [{ name: 'TAURUS' }, 32.230215324437495, 2.230215324437495],
+                [{ name: 'TAURUS' }, 53.83191934884621, 23.831919348846213],
+                [{ name: 'GEMINI' }, 84.16200636362436, 24.162006363624357],
+                [{ name: 'CANCER' }, 118.77456236884359, 28.77456236884359],
+                [{ name: 'VIRGO' }, 154.5076660745534, 4.507666074553413],
+                [{ name: 'LIBRA' }, 186.2553738240629, 6.2553738240629],
+                [{ name: 'SCORPIO' }, 212.2302153244375, 2.230215324437495],
             ]);
         });
     });
@@ -92,7 +92,7 @@ describe('Testing Position', () => {
 
             expect(sun).toStrictEqual({
                 name: 'SUN',
-                constellation: { name: 'Sagittarius' },
+                constellation: { name: 'SAGITTARIUS' },
                 position: {
                     longitude: {
                         absolute: 243.39436188691664,
@@ -115,7 +115,7 @@ describe('Testing Position', () => {
             const fortune = hati.position.getLot('FORTUNE');
 
             expect(fortune).toStrictEqual({
-                constellation: { name: 'Aquarius' },
+                constellation: { name: 'AQUARIUS' },
                 position: {
                     longitude: {
                         absolute: 328.5666862135374,
