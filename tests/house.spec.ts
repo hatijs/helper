@@ -2,7 +2,7 @@ import Hati from '../src';
 
 let hati: Hati;
 beforeAll(() => {
-    hati = Hati.getInstance(new Date('1994-11-26T06:41:00Z'), 9, 126.52, 37.21);
+    hati = new Hati(new Date('1994-11-26T06:41:00Z'), 9, 126.52, 37.21);
 });
 
 describe('Testing House', () => {

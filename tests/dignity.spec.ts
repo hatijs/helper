@@ -3,7 +3,7 @@ import Hati from '../src';
 let hati: Hati;
 let planets: any;
 beforeAll(() => {
-    hati = Hati.getInstance(new Date('1994-11-26T06:41:00Z'), 9, 126.52, 37.21);
+    hati = new Hati(new Date('1994-11-26T06:41:00Z'), 9, 126.52, 37.21);
 
     const getPlanet = hati.dignity.getPlanet('RULERSHIP');
     planets = Hati.util.createEnumObject<Parameters<typeof getPlanet>[0]>({
