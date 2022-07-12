@@ -10,7 +10,7 @@
         "ecmaVersion": 13,
         "sourceType": "module"
     },
-    "ignorePatterns": ["lib/", "node_modules/"],
+    "ignorePatterns": ["lib/", "node_modules/", "tests/"],
     "plugins": ["@typescript-eslint"],
     "rules": {
         "no-unused-vars": "off",
