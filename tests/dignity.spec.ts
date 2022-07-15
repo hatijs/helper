@@ -61,39 +61,39 @@ describe('Testing Dignity', () => {
 
             expect(result).toStrictEqual([
                 {
-                    Dorothean: { First: false, Second: false, Partner: false },
-                    Morinus: { First: false, Second: false, Partner: false },
-                    Ptolemaic: { First: false, Second: false, Partner: false },
+                    dorothean: { first: false, second: false, partner: false },
+                    morinus: { first: false, second: false, partner: false },
+                    ptolemaic: { first: false, second: false, partner: false },
                 },
                 {
-                    Dorothean: { First: false, Second: false, Partner: false },
-                    Morinus: { First: false, Second: true, Partner: false },
-                    Ptolemaic: { First: false, Second: false, Partner: false },
+                    dorothean: { first: false, second: false, partner: false },
+                    morinus: { first: false, second: true, partner: false },
+                    ptolemaic: { first: false, second: false, partner: false },
                 },
                 {
-                    Dorothean: { First: false, Second: false, Partner: false },
-                    Morinus: { First: true, Second: false, Partner: false },
-                    Ptolemaic: { First: false, Second: false, Partner: false },
+                    dorothean: { first: false, second: false, partner: false },
+                    morinus: { first: true, second: false, partner: false },
+                    ptolemaic: { first: false, second: false, partner: false },
                 },
                 {
-                    Dorothean: { First: false, Second: true, Partner: false },
-                    Morinus: { First: false, Second: true, Partner: false },
-                    Ptolemaic: { First: false, Second: true, Partner: false },
+                    dorothean: { first: false, second: true, partner: false },
+                    morinus: { first: false, second: true, partner: false },
+                    ptolemaic: { first: false, second: true, partner: false },
                 },
                 {
-                    Dorothean: { First: false, Second: true, Partner: false },
-                    Morinus: { First: false, Second: false, Partner: false },
-                    Ptolemaic: { First: true, Second: false, Partner: false },
+                    dorothean: { first: false, second: true, partner: false },
+                    morinus: { first: false, second: false, partner: false },
+                    ptolemaic: { first: true, second: false, partner: false },
                 },
                 {
-                    Dorothean: { First: false, Second: false, Partner: false },
-                    Morinus: { First: false, Second: false, Partner: false },
-                    Ptolemaic: { First: false, Second: false, Partner: false },
+                    dorothean: { first: false, second: false, partner: false },
+                    morinus: { first: false, second: false, partner: false },
+                    ptolemaic: { first: false, second: false, partner: false },
                 },
                 {
-                    Dorothean: { First: false, Second: false, Partner: false },
-                    Morinus: { First: false, Second: false, Partner: false },
-                    Ptolemaic: { First: false, Second: false, Partner: false },
+                    dorothean: { first: false, second: false, partner: false },
+                    morinus: { first: false, second: false, partner: false },
+                    ptolemaic: { first: false, second: false, partner: false },
                 },
             ]);
         });
@@ -105,13 +105,13 @@ describe('Testing Dignity', () => {
             });
 
             expect(result).toStrictEqual([
-                { Egyptian: false, Ptolemaic: false },
-                { Egyptian: false, Ptolemaic: false },
-                { Egyptian: true, Ptolemaic: true },
-                { Egyptian: false, Ptolemaic: false },
-                { Egyptian: false, Ptolemaic: false },
-                { Egyptian: false, Ptolemaic: true },
-                { Egyptian: false, Ptolemaic: false },
+                { egyptian: false, ptolemaic: false },
+                { egyptian: false, ptolemaic: false },
+                { egyptian: true, ptolemaic: true },
+                { egyptian: false, ptolemaic: false },
+                { egyptian: false, ptolemaic: false },
+                { egyptian: false, ptolemaic: true },
+                { egyptian: false, ptolemaic: false },
             ]);
         });
 
@@ -122,13 +122,13 @@ describe('Testing Dignity', () => {
             });
 
             expect(result).toStrictEqual([
-                { Chaldean: true, Triplicity: false },
-                { Chaldean: false, Triplicity: false },
-                { Chaldean: true, Triplicity: true },
-                { Chaldean: false, Triplicity: false },
-                { Chaldean: false, Triplicity: false },
-                { Chaldean: false, Triplicity: false },
-                { Chaldean: false, Triplicity: false },
+                { chaldean: true, triplicity: false },
+                { chaldean: false, triplicity: false },
+                { chaldean: true, triplicity: true },
+                { chaldean: false, triplicity: false },
+                { chaldean: false, triplicity: false },
+                { chaldean: false, triplicity: false },
+                { chaldean: false, triplicity: false },
             ]);
         });
     });
