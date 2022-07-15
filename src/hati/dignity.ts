@@ -41,10 +41,10 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
                             )).map((value) => checkRange(value));
 
                             return {
-                                [util.convertUpperCaseToCapitalize(key)]: {
-                                    First: first,
-                                    Second: second,
-                                    Partner: partner,
+                                [key.toLocaleLowerCase()]: {
+                                    first: first,
+                                    second: second,
+                                    partner: partner,
                                 },
                             };
                         })
@@ -54,8 +54,9 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
                 case 'DECAN': {
                     return Object.keys(range)
                         .map((key) => ({
-                            [util.convertUpperCaseToCapitalize(key)]:
-                                checkRange(range[<keyof typeof range>key]),
+                            [key.toLocaleLowerCase()]: checkRange(
+                                range[<keyof typeof range>key]
+                            ),
                         }))
                         .reduce((prev, cur) => ({ ...prev, ...cur }));
                 }
