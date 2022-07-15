@@ -28,7 +28,7 @@
     "homepage": "https://github.com/hatijs/helper#readme",
     "private": false,
     "scripts": {
-        "build": "tsc",
+        "build": "tsc --project ./tsconfig.build.json",
         "dev": "ts-node-dev --respawn --transpile-only --no-notify ${1}",
         "eslint": "eslint --ext .js,.ts . src",
         "pretty": "prettier --write \"./**/*.{js,ts,jsx,json}\"",
