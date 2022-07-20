@@ -1222,6 +1222,21 @@ const HOUSE_SYSTEM = {
 };
 
 const HOUSE = {
+    1: <'1'>'1',
+    2: <'2'>'2',
+    3: <'3'>'3',
+    4: <'4'>'4',
+    5: <'5'>'5',
+    6: <'6'>'6',
+    7: <'7'>'7',
+    8: <'8'>'8',
+    9: <'9'>'9',
+    10: <'10'>'10',
+    11: <'11'>'11',
+    12: <'12'>'12',
+};
+
+const HOUSE_SYSTEM_SYMBOL = {
     PLACIDUS: 'P',
     KOCH: 'K',
     REGIOMONTANUS: 'R',
@@ -1273,6 +1288,7 @@ export {
     FALL,
     HOUSE,
     HOUSE_SYSTEM,
+    HOUSE_SYSTEM_SYMBOL,
     I_FLAG,
     LOT,
     MOIETY,

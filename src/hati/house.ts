@@ -9,7 +9,7 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
      */
     const getPlanet = (
         name: keyof typeof constant.PLANET,
-        hsys: keyof typeof constant.HOUSE
+        hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL
     ) => {
         const posHouse = util.getHouses(tjdUT, geoLon, geoLat, hsys);
         const posPlanet = position(tjdUT, geoLon, geoLat).getPlanet(name);
@@ -71,7 +71,7 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
      */
     const getLot = (
         name: keyof typeof constant.LOT,
-        hsys: keyof typeof constant.HOUSE
+        hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL
     ) => {
         const posHouse = util.getHouses(tjdUT, geoLon, geoLat, hsys);
         const posLot = position(tjdUT, geoLon, geoLat).getLot(name);

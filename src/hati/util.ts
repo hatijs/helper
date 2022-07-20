@@ -48,7 +48,7 @@ const getHouses = (
     tjdUT: number,
     geoLon: number,
     geoLat: number,
-    hsys: keyof typeof constant.HOUSE
+    hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL
 ) => {
     const result = core.node_swe_houses(tjdUT, geoLat, geoLon, hsys);
 

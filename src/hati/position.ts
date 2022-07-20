@@ -16,7 +16,7 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param name House 'Name' to know the position
      * @returns Constellation name and Position of longitude (absolute, relative)
      */
-    const getHouse = (hsys: keyof typeof constant.HOUSE) => {
+    const getHouse = (hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL) => {
         const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys);
 
         return (name: Exclude<Uppercase<keyof typeof houses>, 'HOUSE'>) => {
@@ -34,7 +34,7 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
      * @param number House 'number' to know the position
      * @returns Constellation name and Position of longitude (absolute, relative)
      */
-    const getHouses = (hsys: keyof typeof constant.HOUSE) => {
+    const getHouses = (hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL) => {
         const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys).house;
         return (number: Mapped<12>[number]) => {
             return util.convertDegreeToPosition(houses[number]);

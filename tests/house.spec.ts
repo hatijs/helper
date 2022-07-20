@@ -8,10 +8,10 @@ beforeAll(() => {
 describe('Testing House', () => {
     describe('getPlanet', () => {
         test('SUN', () => {
-            const result = Object.keys(Hati.constant.HOUSE).map((house) => {
+            const result = Object.keys(Hati.constant.HOUSE_SYSTEM_SYMBOL).map((house) => {
                 const { absolute, ruleOfMoiety } = hati.house.getPlanet(
                     'SUN',
-                    <keyof typeof Hati.constant.HOUSE>house
+                    <keyof typeof Hati.constant.HOUSE_SYSTEM_SYMBOL>house
                 );
                 return [absolute, ruleOfMoiety];
             });
@@ -33,10 +33,10 @@ describe('Testing House', () => {
         });
 
         test('MOON', () => {
-            const result = Object.keys(Hati.constant.HOUSE).map((house) => {
+            const result = Object.keys(Hati.constant.HOUSE_SYSTEM_SYMBOL).map((house) => {
                 const { absolute, ruleOfMoiety } = hati.house.getPlanet(
                     'MOON',
-                    <keyof typeof Hati.constant.HOUSE>house
+                    <keyof typeof Hati.constant.HOUSE_SYSTEM_SYMBOL>house
                 );
                 return [absolute, ruleOfMoiety];
             });
@@ -59,10 +59,10 @@ describe('Testing House', () => {
     });
     describe('getLot', () => {
         test('FORTUNE', () => {
-            const result = Object.keys(Hati.constant.HOUSE).map((house) => {
+            const result = Object.keys(Hati.constant.HOUSE_SYSTEM_SYMBOL).map((house) => {
                 const { absolute } = hati.house.getLot(
                     'FORTUNE',
-                    <keyof typeof Hati.constant.HOUSE>house
+                    <keyof typeof Hati.constant.HOUSE_SYSTEM_SYMBOL>house
                 );
                 return [absolute];
             });
