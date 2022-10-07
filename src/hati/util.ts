@@ -32,6 +32,14 @@ const convertUpperCaseToCapitalize = (str: string) =>
 
 const createEnumObject = <T extends string>(o: { [P in T]: P }) => o;
 
+const prefixEnumObject = <T extends string>(
+    o: { [P in T]: P },
+    prefix: string
+) =>
+    Object.keys(o)
+        .map((key) => ({ [`${prefix}${key}`]: `${prefix}${key}` }))
+        .reduce((json, cur) => ({ ...json, ...cur }), {});
+
 const getConstellationIndexFromLongitude = prefixDegree(
     (longitude: number) => Math.floor(longitude / 30) % 12
 );
@@ -102,6 +110,13 @@ export const util = {
      * @returns Implemented objects with a given type T
      */
     createEnumObject,
+    /**
+     * A new object with a prefix is created by receiving an object suitable for a given type and a given type.
+     * @param o Objects for a given type T
+     * @param prefix Prefix to apply to the object's key, value
+     * @returns Implemented objects with a given type T
+     */
+    prefixEnumObject,
     /**
      * Gets the constellation index according to the order of Aries-Pieces constellation according to the given longitude.
      * @param longitude
