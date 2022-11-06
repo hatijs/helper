@@ -84,8 +84,13 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
                 declination: 0,
             },
             speed: {
-                longitude: 0,
-                latitude: 0,
+                absolute: {
+                    longitude: 0,
+                    latitude: 0,
+                },
+                relative: {
+                    longitude: 0,
+                }
             },
         };
 
@@ -114,9 +119,22 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
             };
 
             result.speed = {
-                longitude: resultSpeed.longitudeSpeed,
-                latitude: resultSpeed.latitudeSpeed,
+                absolute: {
+                    longitude: resultSpeed.longitudeSpeed,
+                    latitude: resultSpeed.latitudeSpeed,
+                },
+                relative: {
+                    longitude: 0,
+                }
             };
+
+            if (name in constant.SPEED.AVERAGE.DIRECT) {
+                result.speed.relative = {
+                    longitude: resultSpeed.longitudeSpeed >= 0
+                    ? resultSpeed.longitudeSpeed / constant.SPEED.AVERAGE.DIRECT[<keyof typeof constant.SPEED.AVERAGE.DIRECT>name]
+                    : resultSpeed.longitudeSpeed / constant.SPEED.AVERAGE.RETROGRADE[<keyof typeof constant.SPEED.AVERAGE.RETROGRADE>name]
+                }
+            }
         }
 
         return result;
