@@ -1,7 +1,7 @@
 A progressive Node.js library for building astrology applications 🌕
 
 ## **Description**
-Hati is an astrological integrated Node.js library based on Siwss Ephemeris C library. It uses modern JavaScript and is built with TypeScript.
+Hati is an astrological integrated Node.js library based on Swiss Ephemeris C library. It uses modern JavaScript and is built with TypeScript.
 
 Hati Helper is Node.js library, which has increased usability in @hatijs/core library.
 
@@ -25,7 +25,7 @@ Import from other:
 ``` TypeScript
 import Hati from "@hatijs/helper";
 
-const hati = Hati.getInstance(new Date('2022-01-01T00:00:00Z', 9, 126.58, 37.22));
+const hati = new Hati(new Date('2022-01-01T00:00:00Z'), 9, 126.58, 37.22);
 ```
 
 ## **License**
