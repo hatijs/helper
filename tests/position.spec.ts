@@ -94,13 +94,18 @@ describe('Testing Position', () => {
                         absolute: 243.39436188691664,
                         relative: 3.3943618869166414,
                     },
-                    latitude: -0.000075639386139611,
+                    latitude: -0.00007563938614282484,
                     rectAscension: 241.36853615800743,
-                    declination: -20.83264341321981,
+                    declination: -20.832643413219806,
                 },
                 speed: {
-                    longitude: 1.0116833781577443,
-                    latitude: 0.000010875754566425983,
+                    absolute: {
+                        longitude: 1.0116833781933507,
+                        latitude: 0.000010875746705972084,
+                    },
+                    relative: {
+                        longitude: 1.0265107557767934
+                    }
                 },
             });
         });
@@ -114,8 +119,8 @@ describe('Testing Position', () => {
                 constellation: { name: 'AQUARIUS' },
                 position: {
                     longitude: {
-                        absolute: 328.5666862135388,
-                        relative: 28.566686213538787,
+                        absolute: 328.5666862135374,
+                        relative: 28.566686213537423,
                     },
                 },
             });
