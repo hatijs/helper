@@ -42,9 +42,9 @@ export const dignity = (tjdUT: number, geoLon: number, geoLat: number) => {
 
                             return {
                                 [key.toLocaleLowerCase()]: {
-                                    first: first,
-                                    second: second,
-                                    partner: partner,
+                                    first,
+                                    second,
+                                    partner,
                                 },
                             };
                         })
