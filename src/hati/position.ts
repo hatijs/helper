@@ -13,40 +13,67 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
     /**
      * Gets the position of the house 'name' according to 'hsys'.
      * @param hsys House system name
+     * @param dodecatemoria Indication of dodecatemoria information
      * @param name House 'Name' to know the position
      * @returns Constellation name and Position of longitude (absolute, relative)
      */
-    const getHouse = (hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL) => {
+    const getHouse = (
+        hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL,
+        dodecatemoria?: boolean
+    ) => {
         const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys);
-
         return (name: Exclude<Uppercase<keyof typeof houses>, 'HOUSE'>) => {
-            return util.convertDegreeToPosition(
+            const result = util.convertDegreeToPosition(
                 houses[
                     <Exclude<keyof typeof houses, 'house'>>name.toLowerCase()
                 ]
             );
+
+            if (dodecatemoria) {
+                return {
+                    ...result,
+                    dodecatemoria: _getDodecatemoria(result.position.longitude),
+                };
+            }
+            return result;
         };
     };
 
     /**
      * Gets the position of the house 'number' according to 'hsys'.
      * @param hsys House system name
+     * @param dodecatemoria Indication of dodecatemoria information
      * @param number House 'number' to know the position
      * @returns Constellation name and Position of longitude (absolute, relative)
      */
-    const getHouses = (hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL) => {
+    const getHouses = (
+        hsys: keyof typeof constant.HOUSE_SYSTEM_SYMBOL,
+        dodecatemoria?: boolean
+    ) => {
         const houses = util.getHouses(tjdUT, geoLon, geoLat, hsys).house;
         return (number: Mapped<12>[number]) => {
-            return util.convertDegreeToPosition(houses[number]);
+            const result = util.convertDegreeToPosition(houses[number]);
+            if (dodecatemoria) {
+                return {
+                    ...result,
+                    dodecatemoria: _getDodecatemoria(result.position.longitude),
+                };
+            }
+
+            return result;
         };
     };
 
     /**
      * Gets the position according to the planet 'name'.
      * @param name Name of planet you want to know position of
+     * @param dodecatemoria Indication of dodecatemoria information
      * @returns Constellation name and Position of longitude, latitude, rectAscension, declination, Speed of longitude, latitude
      */
-    const getPlanet = (name: keyof typeof constant.PLANET) => {
+    const getPlanet = (
+        name: keyof typeof constant.PLANET,
+        dodecatemoria?: boolean
+    ) => {
         const planet = constant.PLANET[name];
 
         const resultSpeed = core.node_swe_calc_ut(
@@ -146,6 +173,13 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
                               ],
                 };
             }
+
+            if (dodecatemoria) {
+                return {
+                    ...result,
+                    dodecatemoria: _getDodecatemoria(result.position.longitude),
+                };
+            }
         }
 
         return result;
@@ -154,9 +188,13 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
     /**
      * Gets the position according to the lot 'name'.
      * @param name Name of lot you want to know position of
+     * @param dodecatemoria Indication of dodecatemoria information
      * @returns Constellation name and Position of longitude
      */
-    const getLot = (name: keyof typeof constant.LOT) => {
+    const getLot = (
+        name: keyof typeof constant.LOT,
+        dodecatemoria?: boolean
+    ) => {
         const isDiurnal = util.isDiurnal(tjdUT, geoLon, geoLat);
         const asc = util.getHouses(tjdUT, geoLon, geoLat, 'WHOLE_SIGN');
 
@@ -234,7 +272,40 @@ export const position = (tjdUT: number, geoLon: number, geoLat: number) => {
             }
         }
 
-        return util.convertDegreeToPosition(result);
+        result = util.convertDegreeToPosition(result);
+        if (dodecatemoria) {
+            return {
+                ...result,
+                dodecatemoria: _getDodecatemoria(result.position.longitude),
+            };
+        }
+
+        return result;
+    };
+
+    const _getDodecatemoria = (longitude: {
+        absolute: number;
+        relative: number;
+    }) => {
+        const absolute =
+            (util.getConstellationIndexFromLongitude(longitude.absolute) * 30 +
+                longitude.relative * 12) %
+            360;
+        return {
+            constellation: {
+                name: constant.CONSTELLATION[
+                    util.getConstellationIndexFromLongitude(absolute)
+                ],
+            },
+            position: {
+                longitude: {
+                    absolute,
+                    relative:
+                        absolute -
+                        util.getConstellationIndexFromLongitude(absolute) * 30,
+                },
+            },
+        };
     };
 
     return {
