@@ -61,7 +61,7 @@ enum CONSTELLATION {
     'SAGITTARIUS',
     'CAPRICORN',
     'AQUARIUS',
-    'PISCE',
+    'PISCES',
 }
 
 const PLANET = {
@@ -145,11 +145,11 @@ const DIGNITY = {
 const RULERSHIP = {
     SATURN: [
         [CONSTELLATION.CAPRICORN * 30, CONSTELLATION.AQUARIUS * 30],
-        [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+        [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
     ],
     JUPITER: [
         [CONSTELLATION.SAGITTARIUS * 30, CONSTELLATION.CAPRICORN * 30],
-        [CONSTELLATION.PISCE * 30, 360],
+        [CONSTELLATION.PISCES * 30, 360],
     ],
     MARS: [
         [CONSTELLATION.ARIES * 30, CONSTELLATION.TAURUS * 30],
@@ -172,7 +172,7 @@ const EXALTATION = {
     JUPITER: [[CONSTELLATION.CANCER * 30, CONSTELLATION.LEO * 30]],
     MARS: [[CONSTELLATION.CAPRICORN * 30, CONSTELLATION.AQUARIUS * 30]],
     SUN: [[CONSTELLATION.ARIES * 30, CONSTELLATION.TAURUS * 30]],
-    VENUS: [[CONSTELLATION.PISCE * 30, 360]],
+    VENUS: [[CONSTELLATION.PISCES * 30, 360]],
     MERCURY: [[CONSTELLATION.VIRGO * 30, CONSTELLATION.LIBRA * 30]],
     MOON: [[CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30]],
 };
@@ -184,7 +184,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
                 [
@@ -201,7 +201,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [
                     [CONSTELLATION.ARIES * 30, CONSTELLATION.TAURUS * 30],
@@ -218,7 +218,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [
                     [CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30],
@@ -236,7 +236,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
             ],
@@ -246,7 +246,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
                 [],
@@ -256,7 +256,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
             ],
@@ -277,7 +277,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
             ],
             [
@@ -293,7 +293,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
             ],
         ],
@@ -305,7 +305,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
                 [
@@ -325,7 +325,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [
                     [CONSTELLATION.ARIES * 30, CONSTELLATION.TAURUS * 30],
@@ -374,7 +374,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [
                     [CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30],
@@ -389,7 +389,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
                 [
@@ -414,7 +414,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SAGITTARIUS * 30,
                         CONSTELLATION.CAPRICORN * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
             ],
@@ -431,7 +431,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SAGITTARIUS * 30,
                         CONSTELLATION.CAPRICORN * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
                 [],
@@ -447,7 +447,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
             ],
             [
@@ -459,7 +459,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
             ],
         ],
@@ -556,7 +556,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
                     [CONSTELLATION.CAPRICORN * 30, CONSTELLATION.AQUARIUS * 30],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
                 [],
@@ -572,7 +572,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
                     [CONSTELLATION.CAPRICORN * 30, CONSTELLATION.AQUARIUS * 30],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
             ],
@@ -583,7 +583,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [
                     [CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30],
@@ -595,7 +595,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
                 [
@@ -618,7 +618,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
             ],
@@ -629,7 +629,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [
                     [CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30],
@@ -647,7 +647,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
             ],
@@ -655,7 +655,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
                 [],
@@ -672,7 +672,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
             ],
             [
@@ -685,7 +685,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
             ],
         ],
@@ -695,7 +695,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
             ],
@@ -703,7 +703,7 @@ const TRIPLICITY = {
                 [
                     [CONSTELLATION.GEMINI * 30, CONSTELLATION.CANCER * 30],
                     [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
-                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30],
+                    [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30],
                 ],
                 [],
                 [],
@@ -725,7 +725,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
             ],
             [
@@ -741,7 +741,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
             ],
         ],
@@ -755,7 +755,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
             ],
             [
@@ -767,7 +767,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
             ],
         ],
@@ -779,7 +779,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [
                     [CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30],
@@ -800,7 +800,7 @@ const TRIPLICITY = {
                         CONSTELLATION.SCORPIO * 30,
                         CONSTELLATION.SAGITTARIUS * 30,
                     ],
-                    [CONSTELLATION.PISCE * 30, 360],
+                    [CONSTELLATION.PISCES * 30, 360],
                 ],
                 [],
             ],
@@ -831,7 +831,7 @@ const TERM = {
                 CONSTELLATION.AQUARIUS * 30 + 25,
                 CONSTELLATION.AQUARIUS * 30 + 30,
             ],
-            [CONSTELLATION.PISCE * 30 + 28, CONSTELLATION.PISCE * 30 + 30],
+            [CONSTELLATION.PISCES * 30 + 28, CONSTELLATION.PISCES * 30 + 30],
         ],
         PTOLEMAIC: [
             [CONSTELLATION.ARIES * 30 + 26, CONSTELLATION.ARIES * 30 + 30],
@@ -851,7 +851,7 @@ const TERM = {
                 CONSTELLATION.CAPRICORN * 30 + 30,
             ],
             [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.AQUARIUS * 30 + 6],
-            [CONSTELLATION.PISCE * 30 + 26, CONSTELLATION.PISCE * 30 + 30],
+            [CONSTELLATION.PISCES * 30 + 26, CONSTELLATION.PISCES * 30 + 30],
         ],
     },
     JUPITER: {
@@ -876,7 +876,7 @@ const TERM = {
                 CONSTELLATION.AQUARIUS * 30 + 13,
                 CONSTELLATION.AQUARIUS * 30 + 20,
             ],
-            [CONSTELLATION.PISCE * 30 + 12, CONSTELLATION.PISCE * 30 + 16],
+            [CONSTELLATION.PISCES * 30 + 12, CONSTELLATION.PISCES * 30 + 16],
         ],
         PTOLEMAIC: [
             [CONSTELLATION.ARIES * 30, CONSTELLATION.ARIES * 30 + 6],
@@ -899,7 +899,7 @@ const TERM = {
                 CONSTELLATION.AQUARIUS * 30 + 20,
                 CONSTELLATION.AQUARIUS * 30 + 25,
             ],
-            [CONSTELLATION.PISCE * 30 + 8, CONSTELLATION.PISCE * 30 + 14],
+            [CONSTELLATION.PISCES * 30 + 8, CONSTELLATION.PISCES * 30 + 14],
         ],
     },
     MARS: {
@@ -924,7 +924,7 @@ const TERM = {
                 CONSTELLATION.AQUARIUS * 30 + 20,
                 CONSTELLATION.AQUARIUS * 30 + 25,
             ],
-            [CONSTELLATION.PISCE * 30 + 19, CONSTELLATION.PISCE * 30 + 28],
+            [CONSTELLATION.PISCES * 30 + 19, CONSTELLATION.PISCES * 30 + 28],
         ],
         PTOLEMAIC: [
             [CONSTELLATION.ARIES * 30 + 21, CONSTELLATION.ARIES * 30 + 26],
@@ -947,7 +947,7 @@ const TERM = {
                 CONSTELLATION.AQUARIUS * 30 + 25,
                 CONSTELLATION.AQUARIUS * 30 + 30,
             ],
-            [CONSTELLATION.PISCE * 30 + 20, CONSTELLATION.PISCE * 30 + 26],
+            [CONSTELLATION.PISCES * 30 + 20, CONSTELLATION.PISCES * 30 + 26],
         ],
     },
     SUN: {
@@ -973,7 +973,7 @@ const TERM = {
                 CONSTELLATION.CAPRICORN * 30 + 22,
             ],
             [CONSTELLATION.AQUARIUS * 30 + 7, CONSTELLATION.AQUARIUS * 30 + 13],
-            [CONSTELLATION.PISCE * 30, CONSTELLATION.PISCE * 30 + 12],
+            [CONSTELLATION.PISCES * 30, CONSTELLATION.PISCES * 30 + 12],
         ],
         PTOLEMAIC: [
             [CONSTELLATION.ARIES * 30 + 6, CONSTELLATION.ARIES * 30 + 14],
@@ -993,7 +993,7 @@ const TERM = {
                 CONSTELLATION.AQUARIUS * 30 + 12,
                 CONSTELLATION.AQUARIUS * 30 + 20,
             ],
-            [CONSTELLATION.PISCE * 30, CONSTELLATION.PISCE * 30 + 8],
+            [CONSTELLATION.PISCES * 30, CONSTELLATION.PISCES * 30 + 8],
         ],
     },
     MERCURY: {
@@ -1012,7 +1012,7 @@ const TERM = {
             ],
             [CONSTELLATION.CAPRICORN * 30, CONSTELLATION.CAPRICORN * 30 + 7],
             [CONSTELLATION.AQUARIUS * 30, CONSTELLATION.AQUARIUS * 30 + 7],
-            [CONSTELLATION.PISCE * 30 + 16, CONSTELLATION.PISCE * 30 + 19],
+            [CONSTELLATION.PISCES * 30 + 16, CONSTELLATION.PISCES * 30 + 19],
         ],
         PTOLEMAIC: [
             [CONSTELLATION.ARIES * 30 + 14, CONSTELLATION.ARIES * 30 + 21],
@@ -1032,7 +1032,7 @@ const TERM = {
                 CONSTELLATION.CAPRICORN * 30 + 12,
             ],
             [CONSTELLATION.AQUARIUS * 30 + 6, CONSTELLATION.AQUARIUS * 30 + 12],
-            [CONSTELLATION.PISCE * 30 + 14, CONSTELLATION.PISCE * 30 + 20],
+            [CONSTELLATION.PISCES * 30 + 14, CONSTELLATION.PISCES * 30 + 20],
         ],
     },
     MOON: {
@@ -1051,7 +1051,7 @@ const DECAN = {
                 CONSTELLATION.SAGITTARIUS * 30 + 20,
                 CONSTELLATION.SAGITTARIUS * 30 + 30,
             ],
-            [CONSTELLATION.PISCE * 30, CONSTELLATION.PISCE * 30 + 10],
+            [CONSTELLATION.PISCES * 30, CONSTELLATION.PISCES * 30 + 10],
         ],
         TRIPLICITY: [
             [CONSTELLATION.TAURUS * 30 + 20, CONSTELLATION.TAURUS * 30 + 30],
@@ -1068,7 +1068,7 @@ const DECAN = {
             [CONSTELLATION.LEO * 30 + 10, CONSTELLATION.LEO * 30 + 20],
             [CONSTELLATION.LIBRA * 30 + 20, CONSTELLATION.LIBRA * 30 + 30],
             [CONSTELLATION.CAPRICORN * 30, CONSTELLATION.CAPRICORN * 30 + 10],
-            [CONSTELLATION.PISCE * 30 + 10, CONSTELLATION.PISCE * 30 + 20],
+            [CONSTELLATION.PISCES * 30 + 10, CONSTELLATION.PISCES * 30 + 20],
         ],
         TRIPLICITY: [
             [CONSTELLATION.ARIES * 30 + 20, CONSTELLATION.ARIES * 30 + 30],
@@ -1079,7 +1079,7 @@ const DECAN = {
                 CONSTELLATION.SAGITTARIUS * 30,
                 CONSTELLATION.SAGITTARIUS * 30 + 10,
             ],
-            [CONSTELLATION.PISCE * 30, CONSTELLATION.PISCE * 30 + 10],
+            [CONSTELLATION.PISCES * 30, CONSTELLATION.PISCES * 30 + 10],
         ],
     },
     MARS: {
@@ -1092,7 +1092,7 @@ const DECAN = {
                 CONSTELLATION.CAPRICORN * 30 + 10,
                 CONSTELLATION.CAPRICORN * 30 + 20,
             ],
-            [CONSTELLATION.PISCE * 30 + 20, CONSTELLATION.PISCE * 30 + 30],
+            [CONSTELLATION.PISCES * 30 + 20, CONSTELLATION.PISCES * 30 + 30],
         ],
         TRIPLICITY: [
             [CONSTELLATION.ARIES * 30, CONSTELLATION.ARIES * 30 + 10],
@@ -1103,7 +1103,7 @@ const DECAN = {
                 CONSTELLATION.SAGITTARIUS * 30 + 10,
                 CONSTELLATION.SAGITTARIUS * 30 + 20,
             ],
-            [CONSTELLATION.PISCE * 30 + 20, CONSTELLATION.PISCE * 30 + 30],
+            [CONSTELLATION.PISCES * 30 + 20, CONSTELLATION.PISCES * 30 + 30],
         ],
     },
     SUN: {
@@ -1195,7 +1195,7 @@ const DECAN = {
         TRIPLICITY: [
             [CONSTELLATION.CANCER * 30, CONSTELLATION.CANCER * 30 + 10],
             [CONSTELLATION.SCORPIO * 30 + 20, CONSTELLATION.SCORPIO * 30 + 30],
-            [CONSTELLATION.PISCE * 30 + 10, CONSTELLATION.PISCE * 30 + 20],
+            [CONSTELLATION.PISCES * 30 + 10, CONSTELLATION.PISCES * 30 + 20],
         ],
     },
 };
@@ -1206,7 +1206,7 @@ const FALL = {
     MARS: [[CONSTELLATION.CANCER * 30, CONSTELLATION.LEO * 30]],
     SUN: [[CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30]],
     VENUS: [[CONSTELLATION.VIRGO * 30, CONSTELLATION.LIBRA * 30]],
-    MERCURY: [[CONSTELLATION.PISCE * 30, 360]],
+    MERCURY: [[CONSTELLATION.PISCES * 30, 360]],
     MOON: [[CONSTELLATION.SCORPIO * 30, CONSTELLATION.SAGITTARIUS * 30]],
 };
 
@@ -1223,14 +1223,14 @@ const DETRIMENT = {
         [CONSTELLATION.TAURUS * 30, CONSTELLATION.GEMINI * 30],
         [CONSTELLATION.LIBRA * 30, CONSTELLATION.SCORPIO * 30],
     ],
-    SUN: [[CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCE * 30]],
+    SUN: [[CONSTELLATION.AQUARIUS * 30, CONSTELLATION.PISCES * 30]],
     VENUS: [
         [CONSTELLATION.ARIES * 30, CONSTELLATION.TAURUS * 30],
         [CONSTELLATION.SCORPIO * 30, CONSTELLATION.SAGITTARIUS * 30],
     ],
     MERCURY: [
         [CONSTELLATION.SAGITTARIUS * 30, CONSTELLATION.CAPRICORN * 30],
-        [CONSTELLATION.PISCE * 30, 360],
+        [CONSTELLATION.PISCES * 30, 360],
     ],
     MOON: [[CONSTELLATION.CAPRICORN * 30, CONSTELLATION.AQUARIUS * 30]],
 };
