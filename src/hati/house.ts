@@ -26,8 +26,10 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
             );
 
             if (
-                A.filter((v) => v).length === 0 &&
-                B.filter((v) => v).length === 12
+                (A.filter((v) => v).length === 0 &&
+                    B.filter((v) => v).length === 12) ||
+                (A.filter((v) => v).length === 12 &&
+                    B.filter((v) => v).length === 0)
             ) {
                 return (
                     houses
@@ -88,8 +90,10 @@ export const house = (tjdUT: number, geoLon: number, geoLat: number) => {
             );
 
             if (
-                A.filter((v) => v).length === 0 &&
-                B.filter((v) => v).length === 12
+                (A.filter((v) => v).length === 0 &&
+                    B.filter((v) => v).length === 12) ||
+                (A.filter((v) => v).length === 12 &&
+                    B.filter((v) => v).length === 0)
             ) {
                 return (
                     houses
